@@ -1,2 +1,8 @@
+# IDEA files
 /.idea/workspace.xml
 
+# Yeoman files
+/dist/
+/temp/
+/components/
+/app/components/
