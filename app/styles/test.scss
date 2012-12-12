@@ -1,0 +1,50 @@
+
+$technoItemRadius: 10px;
+
+@mixin applyTechnoTheme($color){
+  .title {
+      color: $color;
+  }
+  .tab_left {
+      background-color: $color;
+  }
+}
+
+.hero-unit {
+
+  li {
+      background-color: #dfdfdf;
+      list-style: none;
+      margin: $technoItemRadius 0px $technoItemRadius 0px;
+      display: block;
+      height: 80px;
+      border-radius: $technoItemRadius;
+  }
+
+  li {
+    .tab_left {
+        width: $technoItemRadius+10px;
+        height: 80px;
+        float: left;
+        border-top-left-radius: $technoItemRadius;
+        border-bottom-left-radius: $technoItemRadius;
+    }
+
+    .title {
+        font-size: 1.5em;
+    }
+
+    .description {
+        font-size: 1.2em;
+        font-style: italic;
+    }
+
+    &.tooling {
+      @include applyTechnoTheme(#1099a3);
+    }
+
+    &.jsfmk {
+      @include applyTechnoTheme(#e16d17);
+    }
+  }
+}
