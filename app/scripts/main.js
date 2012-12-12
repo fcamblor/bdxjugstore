@@ -13,7 +13,7 @@ requirejs.config({
     baseUrl: "scripts",
     paths: {
         "backbone": "../components/backbone/backbone",
-        //"backbone.modelbinder": "../components/Backbone.ModelBinder/Backbone.ModelBinder",
+        "backbone.modelbinder": "../components/Backbone.ModelBinder/Backbone.ModelBinder",
         "jquery": "../components/jquery/jquery",
         "underscore": "../components/underscore/underscore",
         "json2": "../components/require-handlebars-plugin/hbs/json2",
@@ -44,7 +44,7 @@ requirejs.config({
 });
 
 require(["hbs"], function(){
-    require(["backbone", "jquery", "underscore", "routes/MainRouter"], function(Backbone, $, _, MainRouter){
+    require(["backbone", "jquery", "underscore", "routes/MainRouter", "backbone.modelbinder"], function(Backbone, $, _, MainRouter){
         bdxjugstore.init();
         window.router = new MainRouter();
     });
