@@ -2,3 +2,6 @@
 /.idea/ant.xml
 /.idea/gradle.xml
 /.idea/libraries/
+
+/app/components/
+/components/
