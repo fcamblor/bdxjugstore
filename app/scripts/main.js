@@ -44,10 +44,8 @@ requirejs.config({
 });
 
 require(["hbs"], function(){
-    require(["backbone", "jquery", "underscore", "hbs!templates/Hello"], function(Backbone, $, _, monTmpl){
-        $(document).ready(function(){
-          bdxjugstore.init();
-        });
-        console.log(monTmpl({ who: "fred" }));
+    require(["backbone", "jquery", "underscore", "routes/MainRouter"], function(Backbone, $, _, MainRouter){
+        bdxjugstore.init();
+        window.router = new MainRouter();
     });
 });
