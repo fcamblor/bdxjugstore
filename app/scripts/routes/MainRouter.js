@@ -1,4 +1,4 @@
-define(["jquery", "backbone", "underscore"], function($, Backbone, _){
+define(["jquery", "backbone", "underscore", "views/HelloView"], function($, Backbone, _, HelloView){
 
     var MainRouterClass = Backbone.Router.extend({
         routes: {
@@ -14,6 +14,9 @@ define(["jquery", "backbone", "underscore"], function($, Backbone, _){
 
         helloCalled: function(){
             console.log("hello has been called !");
+            var helloView = new HelloView();
+            helloView.setElement($("#container"));
+            helloView.render();
         }
 
     });
