@@ -1,6 +1,43 @@
 /* Will be compiled down to a single stylesheet with your sass files */
 
-body {
-  background-color: blue;
+
+.hero-unit li {
+    background-color: #dfdfdf;
+    list-style: none;
+    margin: 10px 0px 10px 0px;
+    display: block;
+    height: 80px;
+    border-radius: 10px;
 }
 
+.hero-unit li .tab_left {
+    width: 20px;
+    height: 80px;
+    float: left;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.hero-unit li .title {
+    font-size: 1.5em;
+}
+
+.hero-unit li .description {
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+.hero-unit li.tooling .title {
+    color: #1099a3;
+}
+.hero-unit li.tooling .tab_left {
+    background-color: #1099a3;
+}
+
+
+.hero-unit li.jsfmk .title {
+    color: #e16d17;
+}
+.hero-unit li.jsfmk .tab_left {
+    background-color: #e16d17;
+}
