@@ -1,8 +1,9 @@
-define(["jquery", "backbone", "underscore", "views/HelloView"], function($, Backbone, _, HelloView){
+define(["jquery", "backbone", "underscore", "views/HelloView", "views/TechnoListingView"], function($, Backbone, _, HelloView, TechnoListingView){
 
     var MainRouterClass = Backbone.Router.extend({
         routes: {
-            "!/hello": "helloCalled"
+            "!/hello": "helloCalled",
+            "!/technos": "viewTechnos"
         },
 
         initialize: function () {
@@ -17,6 +18,13 @@ define(["jquery", "backbone", "underscore", "views/HelloView"], function($, Back
             var helloView = new HelloView();
             helloView.setElement($("#container"));
             helloView.render();
+        },
+
+        viewTechnos: function(){
+            console.log("technos has been called !");
+            var technosView = new TechnoListingView();
+            technosView.setElement($("#container"));
+            technosView.render();
         }
 
     });

@@ -20,8 +20,6 @@ define([
         helloClicked: function(){
             console.log("hello button clicked");
         }
-
-
     });
 
     return HelloViewClass;
