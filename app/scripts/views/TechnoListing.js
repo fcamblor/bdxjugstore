@@ -1,6 +1,6 @@
 define([
-    "backbone", "underscore", "hbs!templates/TechnoListing"
-], function(Backbone, _, viewTemplate){
+    "backbone", "underscore", "hbs!templates/TechnoListing", "models/TechnoListing"
+], function(Backbone, _, viewTemplate, TechnoListing){
 
     var TechnoListingClass = Backbone.View.extend({
         events: {
@@ -8,17 +8,17 @@ define([
 
         initialize: function(){
             TechnoListingClass.__super__.initialize.apply(this, arguments);
+
+            this.technos = new TechnoListing();
         },
 
         render: function(){
             var currentView = this;
 
             $.when(
-                $.getJSON("/data/technos.json"),
-                $.getJSON("/data/technos.json"),
-                $.getJSON("/data/technos.json")
-            ).then(function(technos, technos2, technos3){
-                currentView.$el.html(viewTemplate({technos: technos}));
+                currentView.technos.fetch()
+            ).then(function(){
+                currentView.$el.html(viewTemplate({technos: currentView.technos.toJSON()}));
             });
 
 //            $.getJSON("/data/technos.json", function(technos){
