@@ -10,7 +10,8 @@ define(["jquery", "backbone", "underscore"], function($, Backbone, _){
         // Value : A require.js path relative to views/ directory, representing
         //   view which will be loaded when corresponding url is met
         viewsByUrls: {
-            "hello": "HelloView"
+            "hello": "HelloView",
+            "technos": "TechnoListing"
         },
 
         // Will be calculated in initialize() depending on viewsByUrls field
