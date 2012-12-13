@@ -12,9 +12,18 @@ define([
 
         render: function(){
             var currentView = this;
-            $.getJSON("/data/technos.json", function(technos){
+
+            $.when(
+                $.getJSON("/data/technos.json"),
+                $.getJSON("/data/technos.json"),
+                $.getJSON("/data/technos.json")
+            ).then(function(technos, technos2, technos3){
                 currentView.$el.html(viewTemplate({technos: technos}));
             });
+
+//            $.getJSON("/data/technos.json", function(technos){
+//                currentView.$el.html(viewTemplate({technos: technos}));
+//            });
 
             return this;
         }
