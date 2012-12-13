@@ -44,12 +44,15 @@ requirejs.config({
 });
 
 require(["hbs"], function(){
-    require(["backbone", "jquery", "underscore", "hbs!templates/Hello"
-    ], function(Backbone, $, _, helloTpl){
+    require(["backbone", "jquery", "underscore", "hbs!templates/Hello",
+        "routes/MainRouter"
+    ], function(Backbone, $, _, helloTpl, MainRouter){
         console.log(helloTpl({who: "fred"}));
 
         $(document).ready(function(){
           fcamblor.init();
         });
+
+        window.router = new MainRouter();
     });
 });
