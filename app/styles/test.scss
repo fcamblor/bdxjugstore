@@ -48,3 +48,12 @@ $technoItemRadius: 10px;
     }
   }
 }
+
+// Will allow to generate a unique sprite image from icons/* images
+// then allow to reference icons with generated classes
+$icons-sprite-dimensions: true;
+@import "icons/*.png";
+@include all-icons-sprites; // Note that the "icons" in the mixin name is variable
+.icons-sprite {
+  display: inline-block;
+}
